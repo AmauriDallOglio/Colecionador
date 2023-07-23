@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Colecionador.View.ProdutoPage"
+             x:Name="Page">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar"  Clicked="AdicionarProduto" />
+        <!--<ToolbarItem Name="Foto" Activated="AdicionarFoto" Order="Secondary"/>-->
+    </ContentPage.ToolbarItems>
+
+    <StackLayout >
+        <ListView x:Name="ItemsListView" 
+                  ItemsSource="{Binding MeusItems}" 
+                  ItemSelected="OnSelected"
+ 
+                  HasUnevenRows="True"
+                  SeparatorColor="White" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="3,3,3,3" HasShadow="true" Padding="0,0,0,0" BackgroundColor="#ffffff">
+                            <StackLayout Orientation="Horizontal" Padding="5,2,5,2">
+                                <Image Source="{Binding CaminhoFoto}" WidthRequest="100" HeightRequest="80" BackgroundColor="#DEE2E6">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding Id}" Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+ 
+                                
+                                <StackLayout >
+                                    <!--<Label Text="{Binding MarcaNome,     StringFormat='Marca: {0}'}"            FontSize="18" TextColor="Black"/>-->
+                                    <Label Text="{Binding NomeProduto,   StringFormat='{0}'}"             FontSize="18" TextColor="Black"/>
+                                    <Label Text="{Binding AnoFabricacao, StringFormat='Ano do modelo: {0}'}"    FontSize="12" TextColor="Black"/>
+                                    <Label Text="{Binding ValorVenda,    StringFormat='Valor venda: {0}'}"      FontSize="12" TextColor="Black"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Colecionador.View.MarcaPage"
+             Title="Marca">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar"  Clicked="AdicionarMarca" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <!--<Label Text="Listagem de marcas!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+        <ListView x:Name="listView"  Margin="20"   ItemSelected="Selecionar">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nome}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!--<ListView x:Name="listView" 
+                  ItemSelected="Selecionar" 
+                  HasUnevenRows="True"
+                  SeparatorColor="White" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="3,3,3,3" HasShadow="true" Padding="0,0,0,0" BackgroundColor="#ffffff">
+                            <StackLayout Orientation="Horizontal" Padding="5,2,5,2">
+
+                                <Image  WidthRequest="100" HeightRequest="80" BackgroundColor="#DEE2E6">
+                                    --><!--<Image.GestureRecognizers>
+                      
+                                    </Image.GestureRecognizers>--><!--
+                                </Image>
+                                <StackLayout HorizontalOptions="StartAndExpand" >
+                                    <Label Text="{Binding Nome}" FontSize="12" FontAttributes="Bold" TextColor="Black"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        
+        
+    </StackLayout>
+    
+    
+</ContentPage>

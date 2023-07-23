@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Cadastro de produto"
+             x:Class="Colecionador.View.ProdutoCadastro">
+    
+    <ContentPage.Content>
+        <StackLayout Margin="3" >
+
+            <!--<Label Text="Cadastro do produto!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+            <!--<Label>aaaa:</Label>
+            <Editor Text="{Binding MarcaNome}"  HeightRequest="40" IsEnabled="False"/>-->
+            
+            <!--<Editor Text="{Binding MarcaNome}"  HeightRequest="40" IsEnabled="False"/>-->
+ 
+
+            <!--<Picker x:Name="fldTipoEstabelecimento" 
+                        Title="Selecione" 
+                        ItemsSource="{Binding TodasMarcas}" 
+                        ItemDisplayBinding="{Binding Nome}" 
+                        SelectedItem="{Binding MarcaSelecionada}"
+                        SelectedIndexChanged="Picker_OnSelectedMarca"/>-->
+
+ 
+
+            <Label>Descrição:</Label>
+            <Editor Placeholder="" Text="{Binding NomeProduto}"  MaxLength="20" HeightRequest="40" />
+ 
+            
+            <Label>Ano fabricação:</Label>
+            <Editor Placeholder=""  Text="{Binding AnoFabricacao}" Keyboard="Numeric" MaxLength="4" HeightRequest="40" />
+
+
+            <!--<Label>Valor da compra:</Label>
+            <Editor Placeholder=""  Text="{Binding ValorCompra}" Keyboard="Numeric"/>-->
+
+            <!--<Label>Data da compra:</Label>
+            <DatePicker Format="dd/MM/yyyy" Date="{Binding DataCompra}" ></DatePicker>-->
+
+
+            <!--<Label>Valor da venda:</Label>
+            <Editor Placeholder=""  Text="{Binding ValorVenda}" Keyboard="Numeric"/>-->
+
+            <!--<Label>Data da venda:</Label>
+            <DatePicker Format="dd/MM/yyyy" Date="{Binding DataVenda}"  ></DatePicker>-->
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label  Grid.Column="0">Valor da compra:</Label>
+                <Editor Grid.Column="0" Placeholder=""  Text="{Binding ValorCompra}" Keyboard="Numeric"/>
+
+                <Label Grid.Column="1" >Data da compra:</Label>
+                <DatePicker Grid.Column="1" Format="dd/MM/yyyy" Date="{Binding DataCompra}" ></DatePicker>
+            </Grid>
+            
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label  Grid.Column="0">Valor da venda:</Label>
+                <Editor Grid.Column="0" Placeholder=""  Text="{Binding ValorVenda}" Keyboard="Numeric"/>
+                
+                <Label  Grid.Column="1" >Data da venda:</Label>
+                <DatePicker  Grid.Column="1"  Format="dd/MM/yyyy" Date="{Binding DataVenda}"  ></DatePicker>
+            </Grid>
+            
+            <!--<Label>Url imagem:</Label>
+            <Editor Text="{Binding ImageUrl}"  />-->
+
+            <Image x:Name="Foto" HeightRequest="200" WidthRequest="100" BackgroundColor="Silver" />
+            <Button Text="Imagem" Clicked="BtnUpload" BorderColor="Silver" BorderWidth="1" BorderRadius="5" />
+ 
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Salvar"  Clicked="BtnSalvar" />
+                <Button Grid.Column="1" Text="Deletar"  Clicked="BtnDeletar"/>
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

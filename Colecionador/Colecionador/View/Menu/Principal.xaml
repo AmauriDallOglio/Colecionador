@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Colecionador.View.Principal"
+            Title="Colecionador">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Categoria"  Clicked="OnClickCategoria" Order="Primary"/>
+        <ToolbarItem Text="Sair"       Clicked="Sair" Order="Secondary"/>
+        <ToolbarItem Text="Sobre"      Clicked="Sobre" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Margin="0,5,0,0" >
+        <ListView x:Name="listView" 
+                  ItemSelected="SelecionaCategoria" 
+                  HasUnevenRows="True"
+                  SeparatorColor="White" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="3,3,3,3" HasShadow="true" Padding="0,0,0,0" BackgroundColor="#ffffff">
+                            <StackLayout Orientation="Horizontal" Padding="5,2,5,2">
+                                <StackLayout HorizontalOptions="StartAndExpand" >
+                                    <Label Text="{Binding Nome}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Grid.Column="2"  FontSize="15"  Text="{Binding QuantidadeProduto, StringFormat='Itens: {0}'}" TextColor="Black" HorizontalTextAlignment="Start" />
+                                    <Label Grid.Column="3"  FontSize="15"  Text="{Binding ValorCompra,       StringFormat='Total em compra: {0}'}"       TextColor="Black" HorizontalTextAlignment="Start" />
+                                    <Label Grid.Column="4"  FontSize="15"  Text="{Binding ValorVenda,       StringFormat='Valor em venda: {0}'}"       TextColor="Black" HorizontalTextAlignment="Start" />
+                                    <Label Grid.Column="4"  FontSize="15"  Text="{Binding ValorString,        StringFormat='Valor total: {0}'}"        TextColor="Red" HorizontalTextAlignment="End" />
+                                </StackLayout>
+                                <!--<Image  WidthRequest="100" HeightRequest="80" BackgroundColor="#ffffff">
+                                    <Image.GestureRecognizers>
+
+                                    </Image.GestureRecognizers>
+                                </Image>-->
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+        <Frame Padding="5,5,5,7" BackgroundColor="#66CC99">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                <!--<Image x:Name="minhaFoto" Source="{Binding ImageResourceProperty}"  WidthRequest="100" HeightRequest="50" BackgroundColor="#66CC99">
+                    --><!--<Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnChartTapGestureTap" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>--><!--
+                </Image>-->
+                <StackLayout HorizontalOptions="StartAndExpand" BackgroundColor="#2196F3">
+                    <Label x:Name="lblMarca" FontSize="15" TextColor="#ffffff"/>
+                    <Label x:Name="lblModelo"  FontSize="15" TextColor="#ffffff"/>
+                    <Label x:Name="lblAnoModelo"  FontSize="15" TextColor="#ffffff"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+    
+</ContentPage>

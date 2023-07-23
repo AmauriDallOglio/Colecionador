@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Colecionador.View.CategoriaPage"
+             Title="Categoria">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar"  Clicked="Adicionar" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <!--<Label Text="Listagem de categorias!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+        <ListView x:Name="listViewCategoria" Margin="20" ItemSelected="SelecionaCategoria">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <TextCell Text="{Binding Nome}"
+                            Detail="{Binding QuantidadeProduto}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

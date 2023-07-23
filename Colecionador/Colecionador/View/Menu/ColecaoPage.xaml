@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Colecionador.View.ColecaoPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Marca"  Clicked="AdicionarMarca" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout  Margin="0,5,0,0">
+        <ListView x:Name="listView" 
+                  ItemSelected="SelecionaMarca"
+                  HasUnevenRows="True"
+                  SeparatorColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="3,3,3,3" HasShadow="true" Padding="0,0,0,0" BackgroundColor="#ffffff">
+                            <StackLayout Orientation="Horizontal" Padding="5,2,5,2">
+                                <StackLayout HorizontalOptions="StartAndExpand" >
+                                    <Label Text="{Binding Nome}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Grid.Column="2"  FontSize="12"  Text="{Binding QuantidadeProduto, StringFormat='Itens: {0}'}" TextColor="Black" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--<Image  WidthRequest="100" HeightRequest="80" BackgroundColor="#ffffff">
+                                    <Image.GestureRecognizers>
+
+                                    </Image.GestureRecognizers>
+                                </Image>-->
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+
+<!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell CommandParameter="{Binding Id}"
+                              Text="{Binding Nome}" TextColor="Black"  
+                              Detail="{Binding QuantidadeProduto}" DetailColor="Red" 
+                              />
+                </DataTemplate>
+            </ListView.ItemTemplate>-->

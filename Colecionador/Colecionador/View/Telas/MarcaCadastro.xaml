@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Colecionador.View.MarcaCadastro">
+
+
+    <StackLayout Margin="20">
+        <!--<Label Text="Cadastro da marca!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+        <Editor Placeholder="Id da categoria"
+                Text="{Binding IdCategoria}"
+                IsEnabled="False"/>
+
+        <Editor Placeholder="Categoria"
+                Text="{Binding NomeCategoria}"
+                HeightRequest="100" IsEnabled="False"/>
+
+        <Editor Placeholder="Entre com a marca"
+                Text="{Binding Nome}"
+                HeightRequest="100" />
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Salvar"  Clicked="BtnSalvar" />
+            <Button Grid.Column="1" Text="Deletar"  Clicked="BtnDeletar"/>
+
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
